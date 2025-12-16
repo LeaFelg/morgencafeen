@@ -1,27 +1,56 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
+
 import Card from "../components/Card.astro";
 ---
 
-<MainLayout title="Titel">
-  <article>
-    <h1>Index overskrift</h1>
-    <Button>Klik!</Button>
-    <p>
-      Link til <Link href="https://www.kea.dk" target="_blank"
-        >En anden side</Link
+<MainLayout title="Forside">
+  <article style="background-color: #762224;">
+    <section class="relative w-full h-[90vh] overflow-hidden">
+      <img
+        src="/hero.png"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover block"
+      />
+      <div
+        class="absolute top-4 right-4 ml-200 mt-30 text-wrap text-white font-extrabold drop-shadow-lg z-20"
       >
-    </p>
-    <Image src={thumbsup} alt="" />
-    <Card
-      src="/favicon.svg"
-      alt="Thumbs up"
-      h3="Card Title"
-      p="This is a description inside the card."
-    />
+        <h1 class="m-0 text-xl md:text-4xl">
+          MED <i>DIN</i> HJÆLP KAN HJEMLØSE FÅ ET MÅLTID
+        </h1>
+      </div>
+    </section>
+
+    <div
+      class="transform -translate-y-4 md:-translate-y-7 transform-gpu flex flex-col md:flex-row gap-3 md:gap-4 max-w-6xl mx-auto px-4 pb-8"
+    >
+      <div class="flex-1 basis-0 min-w-[220px] w-full relative z-30">
+        <Card
+          src="mobilepay.svg"
+          alt="MobilePay logo"
+          h3="STØT VIA MOBILEPAY"
+          p="SEND ET VALGFRIT BELØB TIL
+ 21902"
+        />
+      </div>
+
+      <div class="flex-1 basis-0 min-w-[220px] w-full relative z-30">
+        <Card
+          src="/favicon.svg"
+          alt="Thumbs up"
+          h3="Card Title"
+          p="This is a description inside the card."
+        />
+      </div>
+
+      <div class="flex-1 basis-0 min-w-[220px] w-full relative z-30">
+        <Card
+          src="/favicon.svg"
+          alt="Thumbs up"
+          h3="Card Title"
+          p="This is a description inside the card."
+        />
+      </div>
+    </div>
   </article>
 </MainLayout>
