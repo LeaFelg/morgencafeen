@@ -5,11 +5,12 @@ import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Forside">
+  <!--Hero sektion -->
   <article style="background-color: #762224;">
     <section class="relative w-full h-[90vh] overflow-hidden">
       <img
         src="/hero.png"
-        alt=""
+        alt="Hero billede"
         class="absolute inset-0 w-full h-full object-cover block"
       />
       <div
@@ -21,36 +22,95 @@ import Card from "../components/Card.astro";
       </div>
     </section>
 
+    <!-- Donation cards -->
     <div
-      class="transform -translate-y-4 md:-translate-y-7 transform-gpu flex flex-col md:flex-row gap-3 md:gap-4 max-w-6xl mx-auto px-4 pb-8"
+      class="transform -translate-y-4 md:-translate-y-7 transform-gpu flex flex-col md:flex-row gap-3 md:gap-4 max-w-6xl mx-auto px-4 pb-8 justify-center items-center text-center"
     >
-      <div class="flex-1 basis-0 min-w-[220px] w-full relative z-30">
+      <div
+        class="flex-1 basis-0 min-w-[220px] w-full relative z-30 flex justify-center"
+      >
         <Card
           src="mobilepay.svg"
           alt="MobilePay logo"
           h3="STØT VIA MOBILEPAY"
-          p="SEND ET VALGFRIT BELØB TIL
- 21902"
+          p="SEND ET VALGFRIT BELØB TIL 21902"
         />
       </div>
 
-      <div class="flex-1 basis-0 min-w-[220px] w-full relative z-30">
+      <div
+        class="flex-1 basis-0 min-w-[220px] w-full relative z-30 flex justify-center"
+      >
         <Card
-          src="/favicon.svg"
-          alt="Thumbs up"
-          h3="Card Title"
-          p="This is a description inside the card."
+          src="sms.svg"
+          alt="SMS icon"
+          h3="STØT VIA SMS"
+          p="SMS MORGENCAFEEN TIL 61690564 OG STØT MED 100 KR"
         />
       </div>
 
-      <div class="flex-1 basis-0 min-w-[220px] w-full relative z-30">
+      <div
+        class="flex-1 basis-0 min-w-[220px] w-full relative z-30 flex justify-center"
+      >
         <Card
-          src="/favicon.svg"
-          alt="Thumbs up"
-          h3="Card Title"
-          p="This is a description inside the card."
+          src="bank.svg"
+          alt="Bank icon"
+          h3="BANKOVERFØRSEL"
+          p="REG: 5338 KONTO NR: 0251236"
         />
       </div>
     </div>
   </article>
+
+  <!--Introduktion -->
+  <section class="bg-white py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="text-left">
+          <h1
+            class="text-3xl font-bold mb-0 inline-block"
+            style="color: #762224"
+          >
+            Mad og omsorg i mere end 30 år
+          </h1>
+          <div class="w-46 border-b-4 mt-2 mb-4" style="border-color: #762224">
+          </div>
+          <p class="text-black mb-6">
+            Morgencafé for Hjemløse arbejder for at nedbringe hjemløshed samt
+            forbedre livsvilkårene for socialt udsatte. Størstedelen af
+            Morgencaféens brugere er hjemløse, alkoholikere, psykisk syge og
+            andre socialt udsatte.
+          </p>
+          <p>
+            De er sårbare og udsatte, og fælles for dem er, at de bruger
+            Morgencaféen som et fast holdepunkt i en omtumlet tilværelse.
+            Morgencaféen serverer mad, uddeler tøj og soveposer samt tilbyder
+            lægehjælp, fysioterapi, fodterapi, klipning og juridisk rådgivning.
+          </p>
+          <p>
+            Morgencaféen afholder derudover julearrangementer, grønlandsk
+            madklub og banko samt tager på ferie- sommer- fiske- og naturture
+            for at forbedre hjemløses og socialt udsattes livskvalitet. Stedet
+            kunne ikke eksistere uden de mange frivillige, der hver især viser
+            deres store engagement gennem deres omsorg for udsatte, der ofte
+            ikke har andre fortrolige at tale med i deres liv.
+          </p>
+
+          <button
+            class="mt-6 text-white py-2 px-4 rounded"
+            style="background-color: #762224; "
+          >
+            DONER NU
+          </button>
+        </div>
+
+        <div class="flex justify-center md:justify-end">
+          <img
+            src="imggivefood.png"
+            alt="Support illustration"
+            class="w-full max-w-md object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>
