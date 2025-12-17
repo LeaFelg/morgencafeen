@@ -65,7 +65,9 @@ import Card from "../components/Card.astro";
   <section class="bg-white py-12">
     <div class="max-w-6xl mx-4 md:mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div class="text-left">
+        <div
+          class="text-left intersect:animate-fade-right intersect:duration-9000"
+        >
           <h1
             class="text-3xl font-bold mb-0 inline-block"
             style="color: #762224"
@@ -102,7 +104,9 @@ import Card from "../components/Card.astro";
           </button>
         </div>
 
-        <div class="flex justify-center md:justify-end">
+        <div
+          class="flex justify-center intersect:animate-fade-left intersect:duration-9000 md:justify-end"
+        >
           <img
             src="imggivefood.png"
             alt="Support illustration"
@@ -120,11 +124,15 @@ import Card from "../components/Card.astro";
           <img
             src="story-img.png"
             alt="Support illustration"
-            class="w-[400px] h-[400px] object-cover rounded-full border-[15px] border-yellow-500"
+            class="w-[400px] h-[400px] object-cover rounded-full border-[15px] border-yellow-500 intersect:animate-fade-up intersect:duration-900"
           />
         </div>
         <div class="text-left flex flex-col justify-center">
-          <img src="talebobble.svg" alt="" class="mb-10 mr-10" />
+          <img
+            src="talebobble.svg"
+            alt=""
+            class="mb-10 mr-10 intersect:animate-fade-right intersect:duration-900"
+          />
           <p class="text-black mb-6">
             Jens Andersen a.k.a. Jenno, kom som 40-årig forbi Morgencaféen, og
             fandt en ny retning på livet. Idag er Jenno billedkunstner og holder
@@ -141,7 +149,7 @@ import Card from "../components/Card.astro";
   <section class="bg-white py-12">
     <div class="max-w-6xl mx-4 md:mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div class="text-left">
+        <div class="text-left intersect:animate-fade-up intersect:duration-900">
           <h1
             class="text-3xl font-bold mb-0 inline-block"
             style="color: #762224"
@@ -169,12 +177,12 @@ import Card from "../components/Card.astro";
           <img
             src="morgencafeen.png"
             alt="Support illustration"
-            class="w-full max-w-md object-cover"
+            class="w-full max-w-md object-cover intersect:animate-fade-down intersect:duration-900"
           />
           <img
             src="sundhedsrum.png"
             alt="Support illustration"
-            class="w-full max-w-md object-cover"
+            class="w-full max-w-md object-cover intersect:animate-fade-up intersect:duration-900"
           />
         </div>
       </div>
@@ -215,4 +223,7 @@ import Card from "../components/Card.astro";
       </div>
     </div>
   </section>
+  <div>
+    <a href="/formular">Formular</a>
+  </div>
 </MainLayout>
