@@ -1,0 +1,273 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Forside">
+  <section class="bg-white py-12">
+    <div class="max-w-6xl mx-4 md:mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <!-- Left: Form -->
+        <div>
+          <form
+            id="donation-form"
+            action="#"
+            method="post"
+            class="bg-[#FAF0D7] p-10 md:p-20 rounded-4xl shadow-sm max-w-full"
+          >
+            <!-- Donation type -->
+            <section class="mb-4">
+              <div class="flex gap-3">
+                <label class="flex-1">
+                  <input
+                    type="radio"
+                    name="donation_type"
+                    value="one_time"
+                    checked
+                    class="hidden peer"
+                    id="one_time"
+                  />
+                  <span
+                    class="block text-center py-3 rounded-l-2xl bg-white peer-checked:bg-[#E4B539] peer-checked:text-white cursor-pointer"
+                  >
+                    Engangsbeløb
+                  </span>
+                </label>
+                <label class="flex-1">
+                  <input
+                    type="radio"
+                    name="donation_type"
+                    value="subscription"
+                    class="hidden peer"
+                    id="subscription"
+                  />
+                  <span
+                    class="block text-center py-3 rounded-r-2xl bg-white peer-checked:bg-[#E4B539] peer-checked:text-white cursor-pointer"
+                  >
+                    Abonnement
+                  </span>
+                </label>
+              </div>
+            </section>
+
+            <!-- Amount selection -->
+            <section class="mb-4">
+              <section class="font-medium mb-2">Vælg beløb</section>
+              <div class="flex flex-wrap gap-3 mb-3 items-center">
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="amount"
+                    value="50"
+                    class="hidden peer"
+                  />
+                  <span
+                    class="inline-block h-10 w-24 py-1 px-6 rounded border-3 border-[#ffffff] bg-white peer-checked:bg-[#E4B539] peer-checked:text-white peer-checked:border-[#9c7b21]"
+                    >50 kr</span
+                  >
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="amount"
+                    value="100"
+                    class="hidden peer"
+                  />
+                  <span
+                    class="inline-block h-10 w-24 py-1 px-5 rounded border-3 border-[#ffffff] bg-white peer-checked:bg-[#E4B539] peer-checked:text-white peer-checked:border-[#9c7b21]"
+                    >100 kr</span
+                  >
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="amount"
+                    value="200"
+                    class="hidden peer"
+                  />
+                  <span
+                    class="inline-block py-1 px-5 h-10 w-24 rounded border-3 border-[#ffffff] bg-white peer-checked:bg-[#E4B539] peer-checked:text-white peer-checked:border-[#9c7b21]"
+                    >200 kr</span
+                  >
+                </label>
+
+                <!-- Custom amount: plain number input styled with only a bottom line and dark-grey text (no JS) -->
+                <div class="flex items-center">
+                  <input
+                    id="custom_amount"
+                    name="custom_amount"
+                    type="number"
+                    min="1"
+                    inputmode="numeric"
+                    placeholder="Andet beløb"
+                    class="h-10 w-36 bg-transparent border-b border-gray-700 text-gray-700 placeholder-gray-500 outline-none px-1"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <!-- Payment method -->
+            <fieldset class="mb-4">
+              <legend class="font-medium mb-2">Betalingsmetode</legend>
+              <div class="flex gap-3">
+                <label class="flex-1">
+                  <input
+                    type="radio"
+                    name="payment_method"
+                    value="mobilepay"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="flex flex-col items-center text-center py-3 rounded shadow-sm bg-white peer-checked:bg-[#E4B539] peer-checked:text-white peer-checked:shadow-none cursor-pointer"
+                  >
+                    <span class="block my-2">MobilePay</span>
+                  </div>
+                </label>
+                <label class="flex-1">
+                  <input
+                    type="radio"
+                    name="payment_method"
+                    value="card"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="flex flex-col items-center text-center py-3 rounded shadow-sm bg-white peer-checked:bg-[#E4B539] peer-checked:text-white peer-checked:shadow-none cursor-pointer"
+                  >
+                    <span class="block my-2">Betalingskort</span>
+                  </div>
+                </label>
+                <label class="flex-1">
+                  <input
+                    type="radio"
+                    name="payment_method"
+                    value="paypal"
+                    class="hidden peer"
+                  />
+                  <div
+                    class="flex flex-col items-center text-center py-3 rounded shadow-sm bg-white peer-checked:bg-[#E4B539] peer-checked:text-white peer-checked:shadow-none cursor-pointer"
+                  >
+                    <span class="block my-2">Betalingsservice</span>
+                  </div>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Personal details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label for="first_name" class="block text-sm font-medium mb-1"
+                  >Fornavn</label
+                >
+                <input
+                  id="first_name"
+                  name="first_name"
+                  type="text"
+                  required
+                  class="w-full rounded border px-3 py-2"
+                />
+              </div>
+              <div>
+                <label for="last_name" class="block text-sm font-medium mb-1"
+                  >Efternavn</label
+                >
+                <input
+                  id="last_name"
+                  name="last_name"
+                  type="text"
+                  required
+                  class="w-full rounded border px-3 py-2"
+                />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="phone" class="block text-sm font-medium mb-1"
+                  >Telefon</label
+                >
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  class="w-full rounded border px-3 py-2"
+                />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="email" class="block text-sm font-medium mb-1"
+                  >E-mail</label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  class="w-full rounded border px-3 py-2"
+                />
+              </div>
+            </div>
+
+            <!-- TOS and submit -->
+            <div class="items-center">
+              <label class="flex items-center gap-2 text-sm">
+                <input type="checkbox" name="tos" required class="w-4 h-4" />
+                <span>Jeg accepterer vilkår og betingelser</span>
+              </label>
+
+              <!-- make it a non-submitting button so the form doesn't actually function -->
+              <button
+                type="button"
+                class="mt-10 h-15 w-full bg-[#762224] text-white px-10 py-2 rounded hover:bg-[#E4B539] transition-colors"
+              >
+                STØT NU
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Heading, line, paragraph box and image -->
+        <div class="flex flex-col gap-6">
+          <div>
+            <h1
+              class="text-3xl font-bold mb-2 inline-block"
+              style="color: #762224"
+            >
+              Din støtte gør en forskel for hjemløse
+            </h1>
+            <div
+              class="w-46 border-b-4 mt-2 mb-4"
+              style="border-color: #762224"
+            >
+            </div>
+          </div>
+
+          <div class="bg-[#FAF0D7] p-6">
+            <p class="text-black mb-4">
+              Din støtte gør en forskel, da hver donation hjælper os med at
+              hjælpe hjemløse og socialt udsatte. Det behøver ikke at være store
+              beløb eller penge. Din hjælp gør, at vi kan give de hjemløse mad,
+              tøj, omsorg, pleje og hjælp til at navigere i det offentlige
+              system.
+            </p>
+            <p class="text-black">
+              Alle bidrag uanset størrelse er en stor hjælp. Bidragene går
+              direkte til arbejdet med hjemløse og socialt udsatte i Morgencafé
+              for Hjemløse.
+            </p>
+          </div>
+
+          <div>
+            <img
+              src="galleryimg3.png"
+              alt="Morgencaféen"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+    class="text-center my-20 intersect:animate-fade-up intersect:duration-9000"
+  >
+    <h1 class="text-3xl font-bold" style="color: #762224">Tak for støtten!</h1>
+    <img src="hands.svg" class="m-auto" alt="" />
+  </div>
+</MainLayout>
