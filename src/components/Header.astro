@@ -1,115 +1,141 @@
-<header class="bg-white border-b">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<header class="bg-white">
+  <div class="max-w-6xl mx-auto my-5 px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-start h-16">
-      <a href="/" class="flex items-center gap-3" aria-label="MorgenCafeen home">
+      <!-- Logo -->
+      <a
+        href="/"
+        class="flex items-center gap-3"
+        aria-label="MorgenCafeen home"
+      >
         <img src="/logo.png" alt="MorgenCafeen logo" class="h-20 w-auto" />
         <span class="sr-only">MorgenCafeen</span>
       </a>
 
-      <!-- Desktop nav: horizontal -->
-      <nav class="hidden md:block ml-8" aria-label="Primary" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;">
+      <!-- Desktop nav -->
+      <nav class="hidden md:block ml-8" aria-label="Primary">
         <ul class="flex items-center space-x-6">
-          <li><a href="/" class="text-black text-[14px] font-medium">HVEM ER VI</a></li>
-          <li><a href="/faciliteter" class="text-black text-[14px] font-medium">FACILITETER</a></li>
-          <li><a href="/projekter" class="text-black text-[14px] font-medium">PROJEKTER & SAMARBEJDER</a></li>
-          <li><a href="/historier" class="text-black text-[14px] font-medium">HISTORIER</a></li>
-          <li><a href="/stoette" class="text-black text-[14px] font-medium">STØTTEMULIGHEDER</a></li>
+          <li>
+            <a
+              href="/"
+              class="text-black text-[14px] font-medium hover:text-[#762224]"
+              >HVEM ER VI</a
+            >
+          </li>
+          <li>
+            <a
+              href="/"
+              class="text-black text-[14px] font-medium hover:text-[#762224]"
+              >FACILITETER</a
+            >
+          </li>
+          <li>
+            <a
+              href="/"
+              class="text-black text-[14px] font-medium hover:text-[#762224]"
+              >PROJEKTER & SAMARBEJDER</a
+            >
+          </li>
+          <li>
+            <a
+              href="/"
+              class="text-black text-[14px] font-medium hover:text-[#762224]"
+              >HISTORIER</a
+            >
+          </li>
+          <li>
+            <a
+              href="/"
+              class="text-black text-[14px] font-medium hover:text-[#762224]"
+              >STØTTEMULIGHEDER</a
+            >
+          </li>
         </ul>
       </nav>
 
-   <!-- Right side: STØT button (desktop) + mobile toggle -->
-   <div class="ml-auto flex items-center gap-3">
-     <!-- Support button - visible on md+ -->
-     <a href="/stoette" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full
-     bg-[#762224] font-medium focus:outline-none" aria-label="Støt MorgenCafeen">
-     <span class="text-white">STØT</span>
-  <svg class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-           <path d="M12.001 20.2s-7.2-4.35-9.2-7.05C-0.2 7.85 5.55 3 8.8 5.75c1.6 1.25 3.2 3.05 3.2 3.05s1.6-1.8 3.2-3.05C18.45 3 24.2 7.85 21.2 13.15c-2 2.7-9.199 7.05-9.199 7.05z"/>
-       </svg>
-    </a>
+      <!-- Støt knap og burger menu -->
+      <div class="ml-auto flex items-center gap-3">
+        <!-- Støt knap desktop -->
+        <a
+          href="formular"
+          class="hidden md:inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#762224] hover:bg-[#E4B539] font-medium focus:outline-none"
+          aria-label="Støt MorgenCafeen"
+        >
+          <span class="text-white">STØT</span>
+          <img src="heart.svg" alt="SVG hjerte ikon" class="h-4 w-4" />
+        </a>
 
+        <!-- Burgermenu -->
+        <section class="md:hidden relative">
+          <input
+            id="nav-toggle"
+            type="checkbox"
+            class="peer sr-only"
+            aria-hidden="true"
+          />
+          <label
+            for="nav-toggle"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none cursor-pointer relative z-40"
+            aria-label="Toggle menu"
+            role="button"
+            aria-controls="mobile-menu"
+          >
+            <span class="sr-only">Toggle menu</span>
+            <img
+              src="burgermenu.svg"
+              alt="Burgermenu ikon"
+              class="h-6 w-6 burger-closed peer-checked:hidden inline-block"
+            />
+            <img
+              src="burgermenu.svg"
+              alt="Luk menu"
+              class="h-6 w-6 burger-open hidden peer-checked:inline-block"
+            />
+          </label>
 
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
-        <button id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none">
-          <svg id="icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+          <!-- Mobil dropdown menu -->
+          <div
+            id="mobile-menu"
+            class="dropdown-menu border bg-white px-2 pt-2 pb-3 space-y-1 absolute right-0 top-full mt-2 w-56 shadow-lg rounded-md hidden peer-checked:block z-50"
+          >
+            <a
+              href="/"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-[#762224]"
+              >HVEM ER VI</a
+            >
+            <a
+              href="/"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-[#762224]"
+              >FACILITETER</a
+            >
+            <a
+              href="/"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-[#762224]"
+              >PROJEKTER & SAMARBEJDER</a
+            >
+            <a
+              href="/"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-[#762224]"
+              >HISTORIER</a
+            >
+            <a
+              href="/"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-[#762224]"
+              >STØTTEMULIGHEDER</a
+            >
+
+            <div class="px-3 pt-2">
+              <a
+                href="formular"
+                class="w-full inline-flex justify-center items-center gap-2 px-4 py-2 rounded-full bg-[#762224] hover:bg-[#E4B539] font-medium text-white"
+                aria-label="Støt MorgenCafeen"
+              >
+                <span>STØT</span>
+                <img src="heart.svg" alt="SVG hjerte ikon" class="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
-
-  <!-- Mobile menu (vertical) -->
-  <div id="mobile-menu" class="md:hidden hidden border-t bg-white">
-    <div class="px-2 pt-2 pb-3 space-y-1">
-      <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">HVEM ER VI</a>
-      <a href="/faciliteter" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">FACILITETER</a>
-      <a href="/projekter" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">PROJEKTER & SAMARBEJDER</a>
-      <a href="/historier" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">HISTORIER</a>
-      <a href="/stoette" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">STØTTEMULIGHEDER</a>
-    </div>
-  </div>
-</header>
----
-/* Header.astro — JS removed. Pure Tailwind (uses the `open:` variant for <details>) */
----
-<header class="bg-white border-b">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-start h-16">
-            <a href="/" class="flex items-center gap-3" aria-label="MorgenCafeen home">
-                <img src="/logo.png" alt="MorgenCafeen logo" class="h-20 w-auto" />
-                <span class="sr-only">MorgenCafeen</span>
-            </a>
-
-            <!-- Desktop nav: horizontal -->
-            <nav class="hidden md:block ml-8" aria-label="Primary" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;">
-                <ul class="flex items-center space-x-6">
-                    <li><a href="/" class="text-black text-[14px] font-medium">HVEM ER VI</a></li>
-                    <li><a href="/faciliteter" class="text-black text-[14px] font-medium">FACILITETER</a></li>
-                    <li><a href="/projekter" class="text-black text-[14px] font-medium">PROJEKTER & SAMARBEJDER</a></li>
-                    <li><a href="/historier" class="text-black text-[14px] font-medium">HISTORIER</a></li>
-                    <li><a href="/stoette" class="text-black text-[14px] font-medium">STØTTEMULIGHEDER</a></li>
-                </ul>
-            </nav>
-
-            <!-- Right side: STØT button (desktop) + mobile toggle -->
-            <div class="ml-auto flex items-center gap-3">
-                <!-- Support button - visible on md+ -->
-                <a href="/stoette" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#762224] font-medium focus:outline-none" aria-label="Støt MorgenCafeen">
-                    <span class="text-white">STØT</span>
-                    <svg class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M12.001 20.2s-7.2-4.35-9.2-7.05C-0.2 7.85 5.55 3 8.8 5.75c1.6 1.25 3.2 3.05 3.2 3.05s1.6-1.8 3.2-3.05C18.45 3 24.2 7.85 21.2 13.15c-2 2.7-9.199 7.05-9.199 7.05z"/>
-                    </svg>
-                </a>
-
-                <!-- Mobile menu (no JS) using <details> and Tailwind's `open:` variant -->
-                <details class="md:hidden">
-                    <summary class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none cursor-pointer">
-                        <span class="sr-only">Toggle menu</span>
-                        <!-- hamburger (visible when closed) -->
-                        <svg class="h-6 w-6 block open:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <!-- close X (visible when open) -->
-                        <svg class="h-6 w-6 hidden open:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </summary>
-
-                    <!-- Mobile menu (vertical) -->
-                    <div id="mobile-menu" class="border-t bg-white px-2 pt-2 pb-3 space-y-1">
-                        <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">HVEM ER VI</a>
-                        <a href="/faciliteter" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">FACILITETER</a>
-                        <a href="/projekter" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">PROJEKTER & SAMARBEJDER</a>
-                        <a href="/historier" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">HISTORIER</a>
-                        <a href="/stoette" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-red-500">STØTTEMULIGHEDER</a>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </div>
 </header>
