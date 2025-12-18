@@ -6,7 +6,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   <section class="bg-white py-12">
     <div class="max-w-6xl mx-4 md:mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-10 items-start">
-        <!-- Left: Form -->
+        <!-- Form -->
         <div>
           <form
             id="donation-form"
@@ -49,7 +49,7 @@ import MainLayout from "../layouts/MainLayout.astro";
               </div>
             </section>
 
-            <!-- Amount selection -->
+            <!-- Beløbsvalg -->
             <section class="mb-4">
               <section class="font-medium mb-2">Vælg beløb</section>
               <div class="flex flex-wrap gap-3 mb-3 items-center">
@@ -90,7 +90,7 @@ import MainLayout from "../layouts/MainLayout.astro";
                   >
                 </label>
 
-                <!-- Custom amount: plain number input styled with only a bottom line and dark-grey text (no JS) -->
+                <!-- Indput eget beløb -->
                 <div class="flex items-center">
                   <input
                     id="custom_amount"
@@ -105,7 +105,7 @@ import MainLayout from "../layouts/MainLayout.astro";
               </div>
             </section>
 
-            <!-- Payment method -->
+            <!-- Betalingsmetode -->
             <fieldset class="mb-4">
               <legend class="font-medium mb-2">Betalingsmetode</legend>
               <div class="flex gap-3">
@@ -151,7 +151,7 @@ import MainLayout from "../layouts/MainLayout.astro";
               </div>
             </fieldset>
 
-            <!-- Personal details -->
+            <!-- Personlige oplysninger -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
                 <label for="first_name" class="block text-sm font-medium mb-1"
@@ -204,14 +204,14 @@ import MainLayout from "../layouts/MainLayout.astro";
               </div>
             </div>
 
-            <!-- TOS and submit -->
+            <!-- TOS -->
             <div class="items-center">
               <label class="flex items-center gap-2 text-sm">
                 <input type="checkbox" name="tos" required class="w-4 h-4" />
                 <span>Jeg accepterer vilkår og betingelser</span>
               </label>
 
-              <!-- make it a non-submitting button so the form doesn't actually function -->
+              <!-- Støt knap -->
               <button
                 type="button"
                 class="mt-10 h-15 w-full bg-[#762224] text-white px-10 py-2 rounded hover:bg-[#E4B539] transition-colors"
@@ -222,7 +222,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           </form>
         </div>
 
-        <!-- Right: Heading, line, paragraph box and image -->
+        <!-- Tekst og billede -->
         <div class="flex flex-col gap-6">
           <div>
             <h1
@@ -255,7 +255,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
           <div>
             <img
-              src="galleryimg3.png"
+              src="/galleryimg3.png"
               alt="Morgencaféen"
               class="w-full object-cover"
             />
@@ -268,6 +268,6 @@ import MainLayout from "../layouts/MainLayout.astro";
     class="text-center my-20 intersect:animate-fade-up intersect:duration-9000"
   >
     <h1 class="text-3xl font-bold" style="color: #762224">Tak for støtten!</h1>
-    <img src="hands.svg" class="m-auto" alt="" />
+    <img src="/hands.svg" class="m-auto" alt="" />
   </div>
 </MainLayout>
